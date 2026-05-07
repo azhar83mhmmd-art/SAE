@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Divisi & Marga — SAE Science Astronomy Education</title>
+  <link rel="stylesheet" href="global.css"/>
+  <style>
+    .page-hero{padding:calc(var(--nav-h) + 60px) 0 60px;text-align:center;position:relative}
+    .page-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+    .page-hero-title{font-size:clamp(2rem,5vw,3.5rem);font-family:'Poppins',sans-serif;font-weight:800;line-height:1.15;margin-bottom:16px}
+    .page-hero-desc{color:var(--text-secondary);max-width:560px;margin:0 auto 32px}
+    .divisi-section{padding:0 0 80px}
+    .divisi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-bottom:60px}
+    .divisi-card{background:var(--bg-glass);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 32px;transition:var(--transition);backdrop-filter:blur(12px);position:relative;overflow:hidden}
+    .divisi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-main);opacity:0}
+    .divisi-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,212,255,.1)}
+    .divisi-card:hover::before{opacity:1}
+    .divisi-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+    .divisi-icon-1{background:linear-gradient(135deg,#7B61FF,#9b50ff)}
+    .divisi-icon-2{background:linear-gradient(135deg,#00D4FF,#0080aa)}
+    .divisi-icon-3{background:linear-gradient(135deg,#ff6b9d,#c0392b)}
+    .divisi-icon-4{background:linear-gradient(135deg,#f7971e,#ffd200)}
+    .divisi-name{font-size:1.3rem;font-weight:700;margin-bottom:6px}
+    .divisi-subtitle{color:var(--cyan);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+    .divisi-desc{color:var(--text-secondary);font-size:.9rem;line-height:1.7;margin-bottom:20px}
+    .divisi-members{display:flex;flex-direction:column;gap:8px}
+    .member-item{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-secondary)}
+    .member-item .member-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .member-item strong{color:var(--text-primary);font-weight:600}
+    .member-role{margin-left:auto;font-size:.75rem;color:var(--text-muted);font-weight:500}
+    .divisi-tag{display:inline-block;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--text-secondary);margin-bottom:16px}
+    .pengurus-section{margin-top:60px}
+    .pengurus-section h2{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:8px}
+    .pengurus-section .sub{text-align:center;color:var(--text-secondary);margin-bottom:40px}
+    .pengurus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+    .pengurus-card{background:var(--bg-glass);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;transition:var(--transition);backdrop-filter:blur(12px)}
+    .pengurus-card:hover{border-color:var(--border-hover);transform:translateY(-3px)}
+    .pengurus-avatar{width:56px;height:56px;border-radius:50%;background:var(--grad-main);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.4rem;font-weight:800;color:#fff;font-family:'Poppins',sans-serif}
+    .pengurus-name{font-weight:700;font-size:.95rem;margin-bottom:4px}
+    .pengurus-role{color:var(--cyan);font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  </style>
+</head>
+<body>
+<canvas id="star-canvas"></canvas>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16" stroke="url(#nl1)" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="5" fill="url(#nl2)"/>
+        <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+        <circle cx="26" cy="10" r="2" fill="#7B61FF"/>
+        <circle cx="10" cy="14" r="1.5" fill="#00D4FF"/>
+        <defs>
+          <linearGradient id="nl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          <linearGradient id="nl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+        </defs>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">SAE</span>
+        <span class="nav-logo-sub">Science Astronomy Education</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="marga.html" class="active">Divisi</a></li>
+      <li><a href="artikel.html">Artikel</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-nav-login">Masuk</a>
+      <a href="pendaftaran.html" class="btn-nav-primary">Bergabung</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Beranda</a>
+  <a href="about.html">Tentang SAE</a>
+  <a href="marga.html" class="active">Divisi</a>
+  <a href="artikel.html">Artikel</a>
+  <a href="rules.html">Rules</a>
+  <a href="contact.html">Kontak</a>
+  <div class="mobile-menu-cta">
+    <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+    <a href="pendaftaran.html" class="btn btn-primary btn-sm">Bergabung</a>
+  </div>
+</div>
+
+<div class="page-wrapper">
+  <section class="page-hero">
+    <div class="section-inner">
+      <div class="page-hero-label reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Struktur Komunitas
+      </div>
+      <h1 class="page-hero-title reveal reveal-delay-1">Divisi & <span class="text-gradient">Marga SAE</span></h1>
+      <p class="page-hero-desc reveal reveal-delay-2">SAE terbagi dalam 4 marga/divisi dengan peran dan keahlian yang berbeda untuk mendukung pertumbuhan komunitas astronomi.</p>
+    </div>
+  </section>
+
+  <section class="divisi-section">
+    <div class="section-inner">
+      <div class="divisi-grid">
+        <div class="divisi-card reveal">
+          <div class="divisi-icon divisi-icon-1">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="8.46" y2="8.46"/><line x1="15.54" y1="15.54" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="8.46" y2="15.54"/><line x1="15.54" y1="8.46" x2="19.07" y2="4.93"/></svg>
+          </div>
+          <div class="divisi-tag">Marga I</div>
+          <div class="divisi-name">Nebula</div>
+          <div class="divisi-subtitle">Penelitian & Edukasi</div>
+          <p class="divisi-desc">Marga Nebula berfokus pada riset dan edukasi astronomi. Bertanggung jawab atas pembuatan materi pembelajaran dan pendalaman ilmu pengetahuan luar angkasa.</p>
+          <div class="divisi-members">
+            <div class="member-item">
+              <span class="member-dot" style="background:var(--purple)"></span>
+              <span><strong>RESTU</strong></span>
+              <span class="member-role">Teacher</span>
+            </div>
+            <div class="member-item">
+              <span class="member-dot" style="background:var(--purple)"></span>
+              <span><strong>VIZZ</strong></span>
+              <span class="member-role">Admin Utama</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divisi-card reveal reveal-delay-1">
+          <div class="divisi-icon divisi-icon-2">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="divisi-tag">Marga II</div>
+          <div class="divisi-name">Orion</div>
+          <div class="divisi-subtitle">Media & Konten</div>
+          <p class="divisi-desc">Marga Orion mengelola seluruh konten kreatif dan media komunitas SAE. Bertugas memproduksi artikel, desain grafis, dan materi visual astronomi berkualitas tinggi.</p>
+          <div class="divisi-members">
+            <div class="member-item">
+              <span class="member-dot" style="background:var(--cyan)"></span>
+              <span><strong>DIMAS</strong></span>
+              <span class="member-role">Editor 1</span>
+            </div>
+            <div class="member-item">
+              <span class="member-dot" style="background:var(--cyan)"></span>
+              <span><strong>WODIL</strong></span>
+              <span class="member-role">Editor 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divisi-card reveal reveal-delay-2">
+          <div class="divisi-icon divisi-icon-3">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="divisi-tag">Marga III</div>
+          <div class="divisi-name">Andromeda</div>
+          <div class="divisi-subtitle">Rekrutmen & Komunitas</div>
+          <p class="divisi-desc">Marga Andromeda bertanggung jawab atas rekrutmen anggota baru dan pengelolaan komunitas. Memastikan setiap anggota baru mendapat sambutan dan bimbingan yang baik.</p>
+          <div class="divisi-members">
+            <div class="member-item">
+              <span class="member-dot" style="background:#ff6b9d"></span>
+              <span><strong>ALUN</strong></span>
+              <span class="member-role">Recruiter 1</span>
+            </div>
+            <div class="member-item">
+              <span class="member-dot" style="background:#ff6b9d"></span>
+              <span><strong>DANIL</strong></span>
+              <span class="member-role">Recruiter 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divisi-card reveal reveal-delay-3">
+          <div class="divisi-icon divisi-icon-4">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="divisi-tag">Marga IV</div>
+          <div class="divisi-name">Lyra</div>
+          <div class="divisi-subtitle">Guardian & Keamanan</div>
+          <p class="divisi-desc">Marga Lyra berperan sebagai penjaga kenyamanan dan keamanan komunitas. Memastikan seluruh peraturan SAE ditaati dan menciptakan lingkungan yang kondusif.</p>
+          <div class="divisi-members">
+            <div class="member-item">
+              <span class="member-dot" style="background:#ffd200"></span>
+              <span><strong>VITA</strong></span>
+              <span class="member-role">Guardian 1</span>
+            </div>
+            <div class="member-item">
+              <span class="member-dot" style="background:#ffd200"></span>
+              <span><strong>GATHA</strong></span>
+              <span class="member-role">Guardian 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pengurus-section">
+        <h2 class="reveal">Struktur <span class="text-gradient">Pengurus SAE</span></h2>
+        <p class="sub reveal reveal-delay-1">Tim inti yang memimpin dan mengelola komunitas SAE</p>
+        <div class="pengurus-grid">
+          <div class="pengurus-card reveal">
+            <div class="pengurus-avatar">K</div>
+            <div class="pengurus-name">KENAN</div>
+            <div class="pengurus-role">Owner</div>
+          </div>
+          <div class="pengurus-card reveal reveal-delay-1">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#00D4FF,#0080aa)">N</div>
+            <div class="pengurus-name">NABIL</div>
+            <div class="pengurus-role">Co-Owner</div>
+          </div>
+          <div class="pengurus-card reveal reveal-delay-2">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#9b50ff,#7B61FF)">V</div>
+            <div class="pengurus-name">VIZZ</div>
+            <div class="pengurus-role">Admin Utama</div>
+          </div>
+          <div class="pengurus-card reveal reveal-delay-3">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#ff6b9d,#c0392b)">A</div>
+            <div class="pengurus-name">ALUN</div>
+            <div class="pengurus-role">Recruiter 1</div>
+          </div>
+          <div class="pengurus-card reveal">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#f7971e,#ffd200)">D</div>
+            <div class="pengurus-name">DANIL</div>
+            <div class="pengurus-role">Recruiter 2</div>
+          </div>
+          <div class="pengurus-card reveal reveal-delay-1">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">V</div>
+            <div class="pengurus-name">VITA</div>
+            <div class="pengurus-role">Guardian 1</div>
+          </div>
+          <div class="pengurus-card reveal reveal-delay-2">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">G</div>
+            <div class="pengurus-name">GATHA</div>
+            <div class="pengurus-role">Guardian 2</div>
+          </div>
+          <div class="pengurus-card reveal reveal-delay-3">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#00D4FF,#7B61FF)">R</div>
+            <div class="pengurus-name">RESTU</div>
+            <div class="pengurus-role">Teacher</div>
+          </div>
+          <div class="pengurus-card reveal">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#f7971e,#c0392b)">D</div>
+            <div class="pengurus-name">DIMAS</div>
+            <div class="pengurus-role">Editor 1</div>
+          </div>
+          <div class="pengurus-card reveal reveal-delay-1">
+            <div class="pengurus-avatar" style="background:linear-gradient(135deg,#f7971e,#c0392b)">W</div>
+            <div class="pengurus-name">WODIL</div>
+            <div class="pengurus-role">Editor 2</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:60px" class="reveal">
+        <p style="color:var(--text-secondary);margin-bottom:20px">Tertarik bergabung dan menjadi bagian dari salah satu marga SAE?</p>
+        <a href="pendaftaran.html" class="btn btn-primary btn-lg">Daftar Sekarang</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="16" stroke="url(#fl1)" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="5" fill="url(#fl2)"/>
+          <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+          <defs>
+            <linearGradient id="fl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+            <linearGradient id="fl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          </defs>
+        </svg>
+        <span class="footer-logo-main">SAE</span>
+      </div>
+      <p class="footer-desc">Science Astronomy Education — komunitas astronomi modern untuk generasi berikutnya.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <ul><li><a href="index.html">Beranda</a></li><li><a href="about.html">Tentang SAE</a></li><li><a href="marga.html">Divisi</a></li><li><a href="artikel.html">Artikel</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Komunitas</h4>
+      <ul><li><a href="rules.html">Rules SAE</a></li><li><a href="pendaftaran.html">Pendaftaran</a></li><li><a href="contact.html">Kontak</a></li><li><a href="login.html">Login Member</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Jam Operasional</h4>
+      <ul><li><a href="#">Buka: 05.00 WIB</a></li><li><a href="#">Tutup: 21.00 WIB</a></li><li><a href="#">Senin — Minggu</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 SAE — Science Astronomy Education.</p>
+    <div class="footer-op-badge"><span class="dot" style="background:var(--purple)"></span>Operasional 05.00 — 21.00 WIB</div>
+  </div>
+</footer>
+
+<script src="global.js"></script>
+</body>
+</html>

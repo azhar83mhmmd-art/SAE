@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Artikel — SAE Science Astronomy Education</title>
+  <link rel="stylesheet" href="global.css"/>
+  <style>
+    .page-hero{padding:calc(var(--nav-h) + 60px) 0 60px;text-align:center}
+    .page-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+    .page-hero-title{font-size:clamp(2rem,5vw,3.5rem);font-family:'Poppins',sans-serif;font-weight:800;line-height:1.15;margin-bottom:16px}
+    .page-hero-desc{color:var(--text-secondary);max-width:560px;margin:0 auto}
+    .artikel-section{padding:0 0 80px}
+    .filter-bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;justify-content:center}
+    .filter-btn{padding:8px 20px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:.85rem;font-weight:500;cursor:pointer;transition:var(--transition);font-family:inherit}
+    .filter-btn:hover,.filter-btn.active{border-color:var(--purple);color:var(--text-primary);background:rgba(123,97,255,.12)}
+    .artikel-big-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+    .art-card{background:var(--bg-glass);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:var(--transition);backdrop-filter:blur(12px)}
+    .art-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,212,255,.08)}
+    .art-thumb{height:180px;position:relative;overflow:hidden}
+    .art-thumb-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .art-body{padding:24px}
+    .art-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+    .art-tag{font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:12px;letter-spacing:.04em}
+    .tag-planet{background:rgba(123,97,255,.15);color:var(--purple);border:1px solid rgba(123,97,255,.3)}
+    .tag-bintang{background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.25)}
+    .tag-galaksi{background:rgba(155,80,255,.15);color:#c084fc;border:1px solid rgba(155,80,255,.3)}
+    .tag-tata-surya{background:rgba(247,151,30,.12);color:#fbbf24;border:1px solid rgba(247,151,30,.3)}
+    .tag-fenomena{background:rgba(52,211,153,.1);color:#34d399;border:1px solid rgba(52,211,153,.25)}
+    .art-date{font-size:.78rem;color:var(--text-muted)}
+    .art-title{font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.45}
+    .art-excerpt{color:var(--text-secondary);font-size:.875rem;line-height:1.6;margin-bottom:18px}
+    .art-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
+    .art-author{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--text-secondary)}
+    .art-author-dot{width:28px;height:28px;border-radius:50%;background:var(--grad-main);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff}
+    .art-read-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--cyan);transition:var(--transition)}
+    .art-read-link:hover{color:var(--purple)}
+    .art-read-link svg{transition:transform .2s}
+    .art-read-link:hover svg{transform:translateX(4px)}
+    .load-more{text-align:center;margin-top:48px}
+  </style>
+</head>
+<body>
+<canvas id="star-canvas"></canvas>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16" stroke="url(#nl1)" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="5" fill="url(#nl2)"/>
+        <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+        <circle cx="26" cy="10" r="2" fill="#7B61FF"/>
+        <circle cx="10" cy="14" r="1.5" fill="#00D4FF"/>
+        <defs>
+          <linearGradient id="nl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          <linearGradient id="nl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+        </defs>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">SAE</span>
+        <span class="nav-logo-sub">Science Astronomy Education</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="marga.html">Divisi</a></li>
+      <li><a href="artikel.html" class="active">Artikel</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-nav-login">Masuk</a>
+      <a href="pendaftaran.html" class="btn-nav-primary">Bergabung</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Beranda</a>
+  <a href="about.html">Tentang SAE</a>
+  <a href="marga.html">Divisi</a>
+  <a href="artikel.html" class="active">Artikel</a>
+  <a href="rules.html">Rules</a>
+  <a href="contact.html">Kontak</a>
+  <div class="mobile-menu-cta">
+    <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+    <a href="pendaftaran.html" class="btn btn-primary btn-sm">Bergabung</a>
+  </div>
+</div>
+
+<div class="page-wrapper">
+  <section class="page-hero">
+    <div class="section-inner">
+      <div class="page-hero-label reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Wawasan Antariksa
+      </div>
+      <h1 class="page-hero-title reveal reveal-delay-1">Artikel <span class="text-gradient">SAE</span></h1>
+      <p class="page-hero-desc reveal reveal-delay-2">Kumpulan artikel astronomi terkurasi dari editor dan anggota SAE untuk memperluas wawasan kamu tentang alam semesta.</p>
+    </div>
+  </section>
+
+  <section class="artikel-section">
+    <div class="section-inner">
+      <div class="filter-bar reveal">
+        <button class="filter-btn active">Semua</button>
+        <button class="filter-btn">Planet</button>
+        <button class="filter-btn">Bintang</button>
+        <button class="filter-btn">Galaksi</button>
+        <button class="filter-btn">Tata Surya</button>
+        <button class="filter-btn">Fenomena</button>
+      </div>
+
+      <div class="artikel-big-grid">
+        <div class="art-card reveal">
+          <div class="art-thumb">
+            <div class="art-thumb-bg" style="background:linear-gradient(135deg,#7B61FF,#3a1f8c)">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+          </div>
+          <div class="art-body">
+            <div class="art-meta"><span class="art-tag tag-planet">Planet</span><span class="art-date">07 Mei 2025</span></div>
+            <h3 class="art-title">Mengenal 8 Planet dalam Tata Surya Kita</h3>
+            <p class="art-excerpt">Eksplorasi mendalam tentang karakteristik unik setiap planet, dari Merkurius yang terpanas hingga Neptunus yang paling jauh dari matahari.</p>
+            <div class="art-footer">
+              <div class="art-author"><div class="art-author-dot">R</div><span>Editor RESTU</span></div>
+              <a href="#" class="art-read-link">Baca <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-card reveal reveal-delay-1">
+          <div class="art-thumb">
+            <div class="art-thumb-bg" style="background:linear-gradient(135deg,#00D4FF,#005f7f)">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
+            </div>
+          </div>
+          <div class="art-body">
+            <div class="art-meta"><span class="art-tag tag-bintang">Bintang</span><span class="art-date">03 Mei 2025</span></div>
+            <h3 class="art-title">Black Hole: Misteri Lubang Hitam di Alam Semesta</h3>
+            <p class="art-excerpt">Memahami fenomena black hole — objek dengan gravitasi begitu kuat sehingga cahaya pun tak bisa lolos dari cengkeramannya.</p>
+            <div class="art-footer">
+              <div class="art-author"><div class="art-author-dot" style="background:linear-gradient(135deg,#00D4FF,#0080aa)">D</div><span>Editor DIMAS</span></div>
+              <a href="#" class="art-read-link">Baca <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-card reveal reveal-delay-2">
+          <div class="art-thumb">
+            <div class="art-thumb-bg" style="background:linear-gradient(135deg,#9b50ff,#00a8cc)">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="4" ry="10"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+          </div>
+          <div class="art-body">
+            <div class="art-meta"><span class="art-tag tag-galaksi">Galaksi</span><span class="art-date">29 Apr 2025</span></div>
+            <h3 class="art-title">Galaksi Bima Sakti: Rumah Kita di Alam Semesta</h3>
+            <p class="art-excerpt">Mengenal galaksi Milky Way — tempat Tata Surya kita berada — dan segala keajaiban yang tersembunyi di dalamnya.</p>
+            <div class="art-footer">
+              <div class="art-author"><div class="art-author-dot" style="background:linear-gradient(135deg,#f7971e,#c0392b)">W</div><span>Editor WODIL</span></div>
+              <a href="#" class="art-read-link">Baca <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-card reveal">
+          <div class="art-thumb">
+            <div class="art-thumb-bg" style="background:linear-gradient(135deg,#f7971e,#c0392b)">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+          </div>
+          <div class="art-body">
+            <div class="art-meta"><span class="art-tag tag-tata-surya">Tata Surya</span><span class="art-date">25 Apr 2025</span></div>
+            <h3 class="art-title">Matahari: Bintang Kehidupan yang Menopang Bumi</h3>
+            <p class="art-excerpt">Menyelami fakta-fakta menakjubkan tentang matahari, sumber energi utama tata surya kita yang telah bersinar selama 4,6 miliar tahun.</p>
+            <div class="art-footer">
+              <div class="art-author"><div class="art-author-dot">R</div><span>Editor RESTU</span></div>
+              <a href="#" class="art-read-link">Baca <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-card reveal reveal-delay-1">
+          <div class="art-thumb">
+            <div class="art-thumb-bg" style="background:linear-gradient(135deg,#34d399,#059669)">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"><path d="M12 2a10 10 0 1 0 0 20"/><path d="M12 2a14.5 14.5 0 0 1 4 10 14.5 14.5 0 0 1-4 10"/><path d="M2 12h20"/></svg>
+            </div>
+          </div>
+          <div class="art-body">
+            <div class="art-meta"><span class="art-tag tag-fenomena">Fenomena</span><span class="art-date">20 Apr 2025</span></div>
+            <h3 class="art-title">Aurora Borealis: Pertunjukan Cahaya Alam yang Magis</h3>
+            <p class="art-excerpt">Fenomena cahaya alami di langit kutub yang memukau mata. Pelajari sains di balik keindahan aurora borealis dan australis.</p>
+            <div class="art-footer">
+              <div class="art-author"><div class="art-author-dot" style="background:linear-gradient(135deg,#00D4FF,#0080aa)">D</div><span>Editor DIMAS</span></div>
+              <a href="#" class="art-read-link">Baca <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-card reveal reveal-delay-2">
+          <div class="art-thumb">
+            <div class="art-thumb-bg" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+          <div class="art-body">
+            <div class="art-meta"><span class="art-tag tag-bintang">Bintang</span><span class="art-date">15 Apr 2025</span></div>
+            <h3 class="art-title">Siklus Hidup Bintang: Dari Nebula hingga Supernova</h3>
+            <p class="art-excerpt">Perjalanan panjang sebuah bintang dari kelahirannya di awan gas hingga kematiannya yang spektakuler sebagai supernova.</p>
+            <div class="art-footer">
+              <div class="art-author"><div class="art-author-dot" style="background:linear-gradient(135deg,#f7971e,#c0392b)">W</div><span>Editor WODIL</span></div>
+              <a href="#" class="art-read-link">Baca <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="load-more reveal">
+        <p style="color:var(--text-secondary);margin-bottom:20px;font-size:.9rem">Menampilkan 6 dari 50+ artikel</p>
+        <a href="pendaftaran.html" class="btn btn-secondary">Bergabung untuk Akses Semua Artikel</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="16" stroke="url(#fl1)" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="5" fill="url(#fl2)"/>
+          <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+          <defs>
+            <linearGradient id="fl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+            <linearGradient id="fl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          </defs>
+        </svg>
+        <span class="footer-logo-main">SAE</span>
+      </div>
+      <p class="footer-desc">Science Astronomy Education — komunitas astronomi modern untuk generasi berikutnya.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <ul><li><a href="index.html">Beranda</a></li><li><a href="about.html">Tentang SAE</a></li><li><a href="marga.html">Divisi</a></li><li><a href="artikel.html">Artikel</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Komunitas</h4>
+      <ul><li><a href="rules.html">Rules SAE</a></li><li><a href="pendaftaran.html">Pendaftaran</a></li><li><a href="contact.html">Kontak</a></li><li><a href="login.html">Login Member</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Jam Operasional</h4>
+      <ul><li><a href="#">Buka: 05.00 WIB</a></li><li><a href="#">Tutup: 21.00 WIB</a></li><li><a href="#">Senin — Minggu</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 SAE — Science Astronomy Education.</p>
+    <div class="footer-op-badge"><span class="dot" style="background:var(--purple)"></span>Operasional 05.00 — 21.00 WIB</div>
+  </div>
+</footer>
+
+<script src="global.js"></script>
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

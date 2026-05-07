@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Tentang SAE — Science Astronomy Education</title>
+  <link rel="stylesheet" href="global.css"/>
+  <link rel="stylesheet" href="about.css"/>
+</head>
+<body>
+<canvas id="star-canvas"></canvas>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16" stroke="url(#nl1)" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="5" fill="url(#nl2)"/>
+        <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+        <circle cx="26" cy="10" r="2" fill="#7B61FF"/>
+        <circle cx="10" cy="14" r="1.5" fill="#00D4FF"/>
+        <defs>
+          <linearGradient id="nl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          <linearGradient id="nl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+        </defs>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">SAE</span>
+        <span class="nav-logo-sub">Science Astronomy Education</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="about.html" class="active">Tentang</a></li>
+      <li><a href="marga.html">Divisi</a></li>
+      <li><a href="artikel.html">Artikel</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-nav-login">Masuk</a>
+      <a href="pendaftaran.html" class="btn-nav-primary">Bergabung</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Beranda</a>
+  <a href="about.html" class="active">Tentang SAE</a>
+  <a href="marga.html">Divisi</a>
+  <a href="artikel.html">Artikel</a>
+  <a href="rules.html">Rules</a>
+  <a href="contact.html">Kontak</a>
+  <div class="mobile-menu-cta">
+    <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+    <a href="pendaftaran.html" class="btn btn-primary btn-sm">Bergabung</a>
+  </div>
+</div>
+
+<div class="page-wrapper">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-orb-1"></div>
+    <div class="page-hero-orb-2"></div>
+    <div class="page-hero-inner">
+      <span class="section-label">Komunitas Astronomi</span>
+      <h1 class="page-hero-title reveal">Tentang <span class="text-gradient">SAE</span></h1>
+      <p class="page-hero-desc reveal reveal-delay-1">Science Astronomy Education — komunitas yang lahir dari passion terhadap ilmu pengetahuan dan eksplorasi antariksa</p>
+    </div>
+  </section>
+
+  <!-- SEJARAH -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="history-grid">
+        <div class="history-timeline reveal">
+          <div class="timeline-line"></div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-year">2024</span>
+              <h3>Pendirian SAE</h3>
+              <p>SAE didirikan oleh Kenan dengan visi membangun komunitas edukasi astronomi yang modern dan inklusif untuk generasi muda Indonesia.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-year">2024</span>
+              <h3>Pembentukan Tim Inti</h3>
+              <p>Bergabungnya Co-Owner Nabil dan Admin Utama Vizz memperkuat fondasi komunitas dengan struktur organisasi yang solid.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-year">2025</span>
+              <h3>Ekspansi & Partnership</h3>
+              <p>SAE resmi berpartner dengan EHA, AIC, dan ASTC. Komunitas berkembang pesat dengan ratusan anggota aktif di seluruh Indonesia.</p>
+            </div>
+          </div>
+        </div>
+        <div class="history-content">
+          <span class="section-label">Sejarah Kami</span>
+          <h2 class="section-title reveal">Dari Mimpi Menjadi<br><span class="text-gradient">Realita Bintang</span></h2>
+          <p class="section-desc reveal reveal-delay-1">SAE lahir dari impian sederhana: menjadikan astronomi lebih mudah dipahami dan lebih menyenangkan untuk dipelajari bersama. Dengan semangat eksplorasi dan kolaborasi, SAE terus tumbuh sebagai komunitas yang memberikan dampak nyata dalam dunia edukasi.</p>
+          <div class="history-values reveal reveal-delay-2">
+            <div class="value-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Integritas
+            </div>
+            <div class="value-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Konsistensi
+            </div>
+            <div class="value-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Kolaborasi
+            </div>
+            <div class="value-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Kualitas
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISI MISI -->
+  <section class="section visi-misi">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Arah & Tujuan</span>
+        <h2 class="section-title reveal">Visi & <span class="text-gradient">Misi</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="vm-grid">
+        <div class="vm-card glass-card reveal">
+          <div class="vm-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <h3>Visi</h3>
+          <p>Menjadi komunitas astronomi terdepan di Indonesia yang menginspirasi generasi muda untuk mencintai ilmu pengetahuan dan eksplorasi antariksa.</p>
+        </div>
+        <div class="vm-card glass-card reveal reveal-delay-1">
+          <div class="vm-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Misi</h3>
+          <ul class="vm-list">
+            <li>Menyediakan konten edukasi astronomi berkualitas tinggi</li>
+            <li>Membangun komunitas yang positif, inklusif, dan mendukung</li>
+            <li>Menghubungkan pencinta astronomi dari seluruh Indonesia</li>
+            <li>Mendorong penelitian dan eksplorasi ilmiah bersama</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUKTUR ORGANISASI -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Tim Pengelola</span>
+        <h2 class="section-title reveal">Struktur <span class="text-gradient">Organisasi</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc reveal reveal-delay-1" style="margin: 16px auto 0">Tim berdedikasi yang mengelola komunitas SAE</p>
+      </div>
+
+      <!-- Owner -->
+      <div class="org-tier">
+        <div class="org-card org-owner glass-card reveal">
+          <div class="org-avatar owner-avatar">K</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-owner">Owner</span>
+            <h3>Kenan</h3>
+            <p>Pendiri & pemimpin utama komunitas SAE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="org-connector"></div>
+
+      <!-- Co-Owner -->
+      <div class="org-tier">
+        <div class="org-card glass-card reveal">
+          <div class="org-avatar co-avatar">N</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-co">Co-Owner</span>
+            <h3>Nabil</h3>
+            <p>Pimpinan kedua & koordinator utama</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="org-connector"></div>
+
+      <!-- Admin -->
+      <div class="org-tier single">
+        <div class="org-card glass-card reveal">
+          <div class="org-avatar admin-avatar">V</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-admin">Admin Utama</span>
+            <h3>Vizz</h3>
+            <p>Pengelola utama operasional komunitas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="org-connector"></div>
+
+      <!-- Tim Inti -->
+      <div class="org-tier team-grid">
+        <div class="org-card glass-card reveal">
+          <div class="org-avatar recruiter-avatar">A</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-recruiter">Recruiter</span>
+            <h3>Alun</h3>
+            <p>Perekrutan anggota baru</p>
+          </div>
+        </div>
+        <div class="org-card glass-card reveal reveal-delay-1">
+          <div class="org-avatar guardian-avatar">V</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-guardian">Guardian</span>
+            <h3>Vita</h3>
+            <p>Penjaga keamanan & ketertiban</p>
+          </div>
+        </div>
+        <div class="org-card glass-card reveal reveal-delay-2">
+          <div class="org-avatar guardian-avatar">G</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-guardian">Guardian</span>
+            <h3>Gatha</h3>
+            <p>Penjaga keamanan & ketertiban</p>
+          </div>
+        </div>
+        <div class="org-card glass-card reveal reveal-delay-3">
+          <div class="org-avatar teacher-avatar">R</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-teacher">Teacher</span>
+            <h3>Restu</h3>
+            <p>Pengajar & edukator komunitas</p>
+          </div>
+        </div>
+        <div class="org-card glass-card reveal">
+          <div class="org-avatar editor-avatar">D</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-editor">Editor</span>
+            <h3>Dimas</h3>
+            <p>Pengelola konten & media</p>
+          </div>
+        </div>
+        <div class="org-card glass-card reveal reveal-delay-1">
+          <div class="org-avatar editor-avatar">W</div>
+          <div class="org-info">
+            <span class="org-role-badge badge-editor">Editor</span>
+            <h3>Wodil</h3>
+            <p>Pengelola konten & media</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAM OPERASIONAL -->
+  <section class="section">
+    <div class="section-inner" style="max-width:720px">
+      <div class="section-header">
+        <span class="section-label">Jadwal Aktif</span>
+        <h2 class="section-title reveal">Jam <span class="text-gradient">Operasional</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="op-card glass-card reveal">
+        <div class="op-grid">
+          <div class="op-item op-open">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <span class="op-label">Jam Buka</span>
+              <span class="op-time">05.00 WIB</span>
+            </div>
+          </div>
+          <div class="op-divider">—</div>
+          <div class="op-item op-close">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            <div>
+              <span class="op-label">Jam Tutup</span>
+              <span class="op-time">21.00 WIB</span>
+            </div>
+          </div>
+        </div>
+        <p class="op-note">Admin tidak diperkenankan chat di luar jam operasional</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="16" stroke="url(#fl1)" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="5" fill="url(#fl2)"/>
+          <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+          <defs>
+            <linearGradient id="fl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+            <linearGradient id="fl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          </defs>
+        </svg>
+        <span class="footer-logo-main">SAE</span>
+      </div>
+      <p class="footer-desc">Science Astronomy Education — komunitas astronomi modern untuk generasi berikutnya.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <ul><li><a href="index.html">Beranda</a></li><li><a href="about.html">Tentang SAE</a></li><li><a href="marga.html">Divisi</a></li><li><a href="artikel.html">Artikel</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Komunitas</h4>
+      <ul><li><a href="rules.html">Rules SAE</a></li><li><a href="pendaftaran.html">Pendaftaran</a></li><li><a href="contact.html">Kontak</a></li><li><a href="login.html">Login Member</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Jam Operasional</h4>
+      <ul><li><a href="#">Buka: 05.00 WIB</a></li><li><a href="#">Tutup: 21.00 WIB</a></li><li><a href="#">Senin — Minggu</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 SAE — Science Astronomy Education.</p>
+    <div class="footer-op-badge"><span class="dot" style="background:var(--purple)"></span>Operasional 05.00 — 21.00 WIB</div>
+  </div>
+</footer>
+
+<script src="global.js"></script>
+</body>
+</html>

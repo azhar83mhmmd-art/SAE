@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="SAE — Science Astronomy Education. Komunitas astronomi modern untuk eksplorasi ilmu pengetahuan luar angkasa."/>
+  <title>SAE — Science Astronomy Education</title>
+  <link rel="stylesheet" href="global.css"/>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+<canvas id="star-canvas"></canvas>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16" stroke="url(#nl1)" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="5" fill="url(#nl2)"/>
+        <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+        <circle cx="26" cy="10" r="2" fill="#7B61FF"/>
+        <circle cx="10" cy="14" r="1.5" fill="#00D4FF"/>
+        <defs>
+          <linearGradient id="nl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          <linearGradient id="nl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+        </defs>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">SAE</span>
+        <span class="nav-logo-sub">Science Astronomy Education</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Beranda</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="marga.html">Divisi</a></li>
+      <li><a href="artikel.html">Artikel</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-nav-login">Masuk</a>
+      <a href="pendaftaran.html" class="btn-nav-primary">Bergabung</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" class="active">Beranda</a>
+  <a href="about.html">Tentang SAE</a>
+  <a href="marga.html">Divisi</a>
+  <a href="artikel.html">Artikel</a>
+  <a href="rules.html">Rules</a>
+  <a href="contact.html">Kontak</a>
+  <div class="mobile-menu-cta">
+    <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+    <a href="pendaftaran.html" class="btn btn-primary btn-sm">Bergabung</a>
+  </div>
+</div>
+
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="hero-inner">
+      <div class="hero-badge reveal">
+        <span class="status-badge"><span class="dot"></span>Komunitas Aktif</span>
+        <span class="hero-sep"></span>
+        <span class="hero-badge-text">Season 2025</span>
+      </div>
+      <h1 class="hero-title reveal reveal-delay-1">
+        Jelajahi Semesta<br>
+        <span class="text-gradient">Bersama SAE</span>
+      </h1>
+      <p class="hero-desc reveal reveal-delay-2">
+        Science Astronomy Education adalah komunitas astronomi modern yang menghadirkan pengetahuan luar angkasa, eksplorasi galaksi, dan edukasi sains untuk generasi berikutnya.
+      </p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="pendaftaran.html" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          Bergabung Sekarang
+        </a>
+        <a href="about.html" class="btn btn-secondary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Tentang SAE
+        </a>
+      </div>
+      <div class="hero-stats reveal reveal-delay-4">
+        <div class="stat-item">
+          <span class="stat-num" data-count="500" data-suffix="+">0+</span>
+          <span class="stat-label">Anggota Aktif</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="4" data-suffix=" Divisi">0 Divisi</span>
+          <span class="stat-label">Marga Komunitas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="3" data-suffix=" Partner">0 Partner</span>
+          <span class="stat-label">Komunitas Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="section about-preview">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="planet-container">
+            <div class="planet-glow"></div>
+            <div class="planet-ring"></div>
+            <div class="planet-body">
+              <div class="planet-surface"></div>
+            </div>
+            <div class="planet-orbit orbit-1"><div class="orbit-dot"></div></div>
+            <div class="planet-orbit orbit-2"><div class="orbit-dot dot-2"></div></div>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">Tentang Komunitas</span>
+          <h2 class="section-title reveal reveal-delay-1">
+            Komunitas Astronomi<br>
+            <span class="text-gradient">Modern & Edukatif</span>
+          </h2>
+          <p class="section-desc reveal reveal-delay-2">
+            SAE hadir sebagai ruang belajar dan eksplorasi bagi pecinta astronomi. Kami menggabungkan edukasi ilmiah dengan semangat komunitas yang solid dan inklusif.
+          </p>
+          <div class="about-features reveal reveal-delay-3">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+              <div>
+                <h4>Eksplorasi Ilmiah</h4>
+                <p>Belajar astronomi dari dasar hingga tingkat lanjut</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h4>Komunitas Solid</h4>
+                <p>Bersama ratusan anggota aktif dari seluruh penjuru</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div>
+                <h4>Konten Premium</h4>
+                <p>Artikel, artikel, dan diskusi astronomi berkualitas tinggi</p>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-primary reveal reveal-delay-4" style="width:fit-content;margin-top:8px">Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section stats-section">
+    <div class="section-inner">
+      <div class="stats-grid">
+        <div class="stat-card glass-card reveal">
+          <div class="stat-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <span class="stat-card-num" data-count="500" data-suffix="+">0+</span>
+          <span class="stat-card-label">Total Anggota</span>
+        </div>
+        <div class="stat-card glass-card reveal reveal-delay-1">
+          <div class="stat-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <span class="stat-card-num" data-count="4" data-suffix="">0</span>
+          <span class="stat-card-label">Divisi Aktif</span>
+        </div>
+        <div class="stat-card glass-card reveal reveal-delay-2">
+          <div class="stat-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <span class="stat-card-num" data-count="50" data-suffix="+">0+</span>
+          <span class="stat-card-label">Artikel Edukasi</span>
+        </div>
+        <div class="stat-card glass-card reveal reveal-delay-3">
+          <div class="stat-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="stat-card-num" data-count="3" data-suffix="">0</span>
+          <span class="stat-card-label">Partner Komunitas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTIKEL PREVIEW -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Wawasan Antariksa</span>
+        <h2 class="section-title reveal">Artikel <span class="text-gradient">Pilihan</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc reveal reveal-delay-1" style="margin:16px auto 0">Temukan pengetahuan astronomi terkurasi dari para editor SAE</p>
+      </div>
+      <div class="artikel-grid">
+        <article class="artikel-card glass-card reveal">
+          <div class="artikel-img">
+            <div class="artikel-img-placeholder" style="--c1:#7B61FF;--c2:#3a1f8c">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+          </div>
+          <div class="artikel-body">
+            <span class="artikel-tag">Planet</span>
+            <h3>Mengenal 8 Planet dalam Tata Surya Kita</h3>
+            <p>Eksplorasi mendalam tentang karakteristik unik setiap planet, dari Merkurius yang terpanas hingga Neptunus yang paling jauh.</p>
+            <a href="artikel.html" class="artikel-link">
+              Baca Selengkapnya
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="artikel-card glass-card reveal reveal-delay-1">
+          <div class="artikel-img">
+            <div class="artikel-img-placeholder" style="--c1:#00D4FF;--c2:#005f7f">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+          </div>
+          <div class="artikel-body">
+            <span class="artikel-tag">Bintang</span>
+            <h3>Black Hole: Misteri Lubang Hitam di Alam Semesta</h3>
+            <p>Memahami fenomena black hole — objek dengan gravitasi begitu kuat sehingga cahaya pun tak bisa lolos darinya.</p>
+            <a href="artikel.html" class="artikel-link">
+              Baca Selengkapnya
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="artikel-card glass-card reveal reveal-delay-2">
+          <div class="artikel-img">
+            <div class="artikel-img-placeholder" style="--c1:#9b50ff;--c2:#00a8cc">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="4" ry="10"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+          </div>
+          <div class="artikel-body">
+            <span class="artikel-tag">Galaksi</span>
+            <h3>Galaksi Bima Sakti: Rumah Kita di Alam Semesta</h3>
+            <p>Mengenal galaksi Milky Way — tempat Tata Surya kita berada — dan segala keajaiban yang tersembunyi di dalamnya.</p>
+            <a href="artikel.html" class="artikel-link">
+              Baca Selengkapnya
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="artikel.html" class="btn btn-secondary">Lihat Semua Artikel</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES PREVIEW -->
+  <section class="section rules-preview">
+    <div class="section-inner">
+      <div class="rules-preview-grid">
+        <div class="rules-preview-content">
+          <span class="section-label">Tata Tertib</span>
+          <h2 class="section-title reveal">Rules <span class="text-gradient">Komunitas</span></h2>
+          <p class="section-desc reveal reveal-delay-1">Untuk menjaga kenyamanan bersama, setiap anggota SAE wajib mematuhi peraturan komunitas yang berlaku.</p>
+          <div class="rules-preview-list reveal reveal-delay-2">
+            <div class="rule-preview-item">
+              <div class="rule-num">01</div>
+              <span>Dilarang menghina satu sama lain</span>
+            </div>
+            <div class="rule-preview-item">
+              <div class="rule-num">02</div>
+              <span>Dilarang membahas konten 18+</span>
+            </div>
+            <div class="rule-preview-item">
+              <div class="rule-num">03</div>
+              <span>Out wajib izin dengan alasan jelas</span>
+            </div>
+            <div class="rule-preview-item">
+              <div class="rule-num">04</div>
+              <span>Keluar masuk lebih dari 3x = blacklist</span>
+            </div>
+          </div>
+          <a href="rules.html" class="btn btn-primary reveal reveal-delay-3" style="width:fit-content;margin-top:8px">Lihat Semua Rules</a>
+        </div>
+        <div class="rules-preview-visual reveal reveal-delay-1">
+          <div class="rules-card-preview glass-card">
+            <div class="rules-card-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>SAE Community Rules</span>
+            </div>
+            <div class="rules-card-badge">
+              <span class="status-badge"><span class="dot"></span>Aktif Berlaku</span>
+            </div>
+            <p class="rules-card-count">12 peraturan aktif</p>
+            <div class="rules-card-bars">
+              <div class="rule-bar" style="width:90%"></div>
+              <div class="rule-bar" style="width:75%"></div>
+              <div class="rule-bar" style="width:60%"></div>
+              <div class="rule-bar" style="width:85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER -->
+  <section class="section partner-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Jaringan Kolaborasi</span>
+        <h2 class="section-title reveal">Partner <span class="text-gradient">SAE</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="partner-grid">
+        <div class="partner-card glass-card reveal">
+          <div class="partner-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>EHA</h3>
+          <p>Explore Horizon Astronomy</p>
+          <span class="partner-badge">Partner Resmi</span>
+        </div>
+        <div class="partner-card glass-card reveal reveal-delay-1">
+          <div class="partner-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="8.46" y2="8.46"/><line x1="15.54" y1="15.54" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <h3>AIC</h3>
+          <p>Astronomy Indonesia Community</p>
+          <span class="partner-badge">Partner Resmi</span>
+        </div>
+        <div class="partner-card glass-card reveal reveal-delay-2">
+          <div class="partner-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>ASTC</h3>
+          <p>Astronomy Science Technology Community</p>
+          <span class="partner-badge">Partner Resmi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA JOIN -->
+  <section class="section cta-section">
+    <div class="section-inner">
+      <div class="cta-box glass-card reveal">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <div class="cta-content">
+          <span class="section-label" style="justify-content:center">Gabung Sekarang</span>
+          <h2 class="cta-title">Siap Menjelajahi<br><span class="text-gradient">Alam Semesta?</span></h2>
+          <p class="section-desc" style="margin:16px auto 32px;text-align:center">Bergabunglah dengan komunitas astronomi paling aktif dan eksplorasi pengetahuan luar angkasa bersama kami.</p>
+          <div class="cta-actions">
+            <a href="pendaftaran.html" class="btn btn-primary btn-lg">Daftar Gratis</a>
+            <a href="about.html" class="btn btn-secondary btn-lg">Pelajari Lebih</a>
+          </div>
+          <p class="cta-note">WITH SAE INCREASE KNOWLEDGE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-wrapper -->
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="16" stroke="url(#fl1)" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="5" fill="url(#fl2)"/>
+          <ellipse cx="18" cy="18" rx="16" ry="6" stroke="rgba(0,212,255,0.45)" stroke-width="1" fill="none"/>
+          <defs>
+            <linearGradient id="fl1" x1="2" y1="2" x2="34" y2="34"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+            <linearGradient id="fl2" x1="13" y1="13" x2="23" y2="23"><stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient>
+          </defs>
+        </svg>
+        <span class="footer-logo-main">SAE</span>
+      </div>
+      <p class="footer-desc">Science Astronomy Education — komunitas astronomi modern yang menghadirkan pengetahuan luar angkasa untuk generasi berikutnya.</p>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.848L.057 23.986l6.3-1.651C8.025 23.355 9.969 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.863 0-3.597-.512-5.079-1.4l-.364-.216-3.736.979.997-3.645-.237-.375C2.574 15.639 2 13.879 2 12 2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="social-icon" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.01.023.022.043.032.061a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang SAE</a></li>
+        <li><a href="marga.html">Divisi & Marga</a></li>
+        <li><a href="artikel.html">Artikel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Komunitas</h4>
+      <ul>
+        <li><a href="rules.html">Rules SAE</a></li>
+        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="login.html">Login Member</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Jam Operasional</h4>
+      <ul>
+        <li><a href="#">Buka: 05.00 WIB</a></li>
+        <li><a href="#">Tutup: 21.00 WIB</a></li>
+        <li><a href="#">Senin — Minggu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 SAE — Science Astronomy Education. Dibuat dengan semangat eksplorasi.</p>
+    <div class="footer-op-badge">
+      <span class="dot" style="background:var(--purple)"></span>
+      Operasional 05.00 — 21.00 WIB
+    </div>
+  </div>
+</footer>
+
+<script src="global.js"></script>
+</body>
+</html>
